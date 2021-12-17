@@ -55,6 +55,11 @@ class EventJSONStore(private val context: Context) : EventStore {
         serialize()
     }
 
+    override fun delete(event: EventModel) {
+        events.remove(event)
+        serialize()
+    }
+
     private fun serialize() {
         val jsonString = gsonBuilder.toJson(events, listType)
         write(context, JSON_FILE, jsonString)
