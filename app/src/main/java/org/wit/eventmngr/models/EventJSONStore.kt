@@ -52,6 +52,7 @@ class EventJSONStore(private val context: Context) : EventStore {
             foundEvent.lng = event.lng
             foundEvent.zoom = event.zoom
         }
+        serialize()
     }
 
     private fun serialize() {
