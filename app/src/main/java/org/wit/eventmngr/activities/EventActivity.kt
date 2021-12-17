@@ -104,6 +104,10 @@ class EventActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.item_delete -> {
+                app.events.delete(event)
+                finish()
+            }
             R.id.item_cancel -> {
                 finish()
             }

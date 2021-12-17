@@ -4,6 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/item_delete"
+        android:title="@string/menu_deleteEvent"
+        android:visible="true"
+        app:showAsAction="always"/>
+    <item
         android:id="@+id/item_cancel"
         android:title="@string/menu_cancelEvent"
         app:showAsAction="always"/>

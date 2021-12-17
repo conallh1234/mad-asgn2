@@ -40,10 +40,6 @@ class EventAdapter constructor(
             binding.eventTitle.text = event.title
             binding.description.text = event.description
             Picasso.get().load(event.image).resize(200,200).into(binding.imageIcon)
-//            Glide.with(binding.root)
-//                .load(placemark.image)
-//                .override(200,200)
-//                .into(binding.imageIcon)
             binding.root.setOnClickListener { listener.onEventClick(event) }
         }
     }
