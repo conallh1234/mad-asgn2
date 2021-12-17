@@ -42,7 +42,16 @@ class EventJSONStore(private val context: Context) : EventStore {
 
 
     override fun update(event: EventModel) {
-        // todo
+        val eventsList = findAll() as ArrayList<EventModel>
+        var foundEvent: EventModel? = eventsList.find { e -> e.id == event.id }
+        if (foundEvent != null) {
+            foundEvent.title = event.title
+            foundEvent.description = event.description
+            foundEvent.image = event.image
+            foundEvent.lat = event.lat
+            foundEvent.lng = event.lng
+            foundEvent.zoom = event.zoom
+        }
     }
 
     private fun serialize() {
